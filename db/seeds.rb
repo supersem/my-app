@@ -7,12 +7,12 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 5.times do |i|
-  Project.create(name: "Project №#{i}")
+  Project.create(name: "Project №#{i+1}")
 end
 
 Project.all.each do |project|
-  6.times do |i|
-    project.tasks.create(name: "Task №#{i}", 
-      description: "Task description №#{i}")
+  5.times do |i|
+    project.tasks.create(name: "Task №#{i+1}", 
+      description: "Description ...")
   end
 end
