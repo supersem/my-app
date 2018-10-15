@@ -1,0 +1,11 @@
+<h1>Project name:  <%= @project.name %> </h1>
+<%= link_to 'Add task', new_account_project_task_path(params[:id]) %>
+<%= link_to 'Back', './' %>
+<% @tasks.each do |task| %>
+  <p>Task name:  <%= task.name %>
+    <%= link_to 'Show', account_project_task_path(task.project_id, task)%>
+    <%= link_to 'Edit', edit_account_project_task_path(task.project_id, task)%>
+    <%= link_to 'Delete', account_project_task_path(task.project_id, task), :method => :delete, 
+      data: {confirm: "Are you sure?"} %>
+<% end %>
+</p>
